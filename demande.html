@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demande de Création | AI Odyssey Labs</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="bg-mesh"></div>
+
+    <header>
+        <div class="logo" data-text="AI ODYSSEY LABS">AI ODYSSEY LABS</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="infos.html">Infos</a></li>
+                <li><a href="commentaires.html">Commentaires</a></li>
+                <li><a href="galleries.html">Galeries</a></li>
+                <li><a href="#" id="contact-trigger">Contacts</a></li>
+                <li><a href="connexion.html" style="color: var(--accent-primary); font-weight: bold;">Connexion</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main style="padding-top: 150px; padding-bottom: 100px; max-width: 800px; margin: 0 auto; width: 90%;">
+        <section class="reveal active">
+            <h1 class="section-title">Nouvelle Demande</h1>
+            
+            <div class="contact-card" style="text-align: left; animation: none;">
+                
+                <form id="request-form">
+                <!-- Description de l'image -->
+                <label style="color: var(--accent-primary); font-family: var(--font-heading); font-size: 1.2rem; display: block; margin-bottom: 10px;">Quelle image voulez-vous ?</label>
+                <textarea id="message" placeholder="Décrivez votre idée, l'ambiance souhaitée, les détails importants..." rows="6" style="width: 100%; background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); padding: 15px; border-radius: 8px; color: white; font-family: var(--font-main); resize: vertical; margin-bottom: 30px;" required></textarea>
+                
+                <!-- Sélection du destinataire -->
+                <label style="color: var(--accent-primary); font-family: var(--font-heading); font-size: 1.2rem; display: block; margin-bottom: 15px;">À qui envoyer ?</label>
+                <div style="display: flex; gap: 20px; margin-bottom: 40px;">
+                    <button type="button" class="recipient-btn active" data-email="inan.mirnik@gmail.com" onclick="selectRecipient(this)">Designer (Inan)</button>
+                    <button type="button" class="recipient-btn" data-email="Florian.tissot@outlook.fr" onclick="selectRecipient(this)">Co-designer (Florian)</button>
+                </div>
+
+                <!-- Publication -->
+                <label style="color: var(--text-dim); display: block; margin-bottom: 15px; font-size: 0.95rem;">Si vous souhaitez que votre création soit publiée sur le site, cliquez ci-dessous :</label>
+                <div style="text-align: left; margin-bottom: 40px;">
+                    <button type="button" class="toggle-btn" id="btn-poster" onclick="this.classList.toggle('active')">Poster</button>
+                </div>
+
+                <!-- Info Paiement -->
+                <div id="paypal-section" style="background: rgba(0, 112, 186, 0.05); border: 1px solid rgba(0, 112, 186, 0.3); border-radius: 12px; padding: 20px; margin-bottom: 25px; text-align: center;">
+                    <p style="color: var(--accent-secondary); font-size: 0.95rem; margin-bottom: 15px;">
+                        <i class="fa-brands fa-paypal" style="margin-right: 5px; color: #0070ba;"></i> <strong>Paiement sécurisé</strong><br>
+                        <span style="color: var(--text-dim);">Réglez via le lien PayPal de <span id="selected-name">Inan</span> :</span>
+                    </p>
+                    <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+                        <a id="paypal-inan" href="https://paypal.me/HoshiAmano" target="_blank" style="display: inline-flex; align-items: center; gap: 8px; background: #0070ba; color: white; padding: 8px 16px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 0.85rem; transition: 0.3s; box-shadow: 0 4px 15px rgba(0, 112, 186, 0.3);">
+                            <i class="fa-brands fa-paypal"></i> PayPal Inan
+                        </a>
+                        <a id="paypal-florian" href="https://www.paypal.me/florian_lien_ici" target="_blank" style="display: none; align-items: center; gap: 8px; background: #00457c; color: white; padding: 8px 16px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 0.85rem; transition: 0.3s; box-shadow: 0 4px 15px rgba(0, 69, 124, 0.3);">
+                            <i class="fa-brands fa-paypal"></i> PayPal Florian
+                        </a>
+                    </div>
+                </div>
+
+
+
+
+                <!-- Soumettre -->
+                <div style="text-align: center;">
+                    <button type="submit" id="submit-btn" class="cta-button" style="padding: 15px 40px; font-size: 1.1rem; width: 100%;">Envoyer la demande</button>
+                    <p id="status-message" style="margin-top: 15px; font-size: 0.95rem; display: none;"></p>
+                </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Overlay Contact -->
+    <div id="contact-overlay" class="overlay">
+        <div class="overlay-content">
+            <button id="close-overlay" class="close-btn">&times;</button>
+            <h2 class="section-title">Contacts</h2>
+            <div class="contact-grid">
+                <div class="contact-card" id="inan-card">
+                    <h3 class="contact-name gold-neon">Inan <span>(Designer)</span></h3>
+                    <div class="contact-item">
+                        <span class="label">Numéro</span>
+                        <a href="tel:+33769296128" class="value">07 69 29 61 28</a>
+                    </div>
+                </div>
+                <div class="contact-card" id="florian-card">
+                    <h3 class="contact-name">Florian <span>(Développeur)</span></h3>
+                    <div class="contact-item">
+                        <span class="label">Numéro</span>
+                        <a href="tel:+33664795325" class="value">06 64 79 53 25</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://www.instagram.com/ai.odyssey.labs?igsh=dTY3anluMWUxZHJj" class="social-link" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i> Instagram</a>
+            <a href="https://www.facebook.com/share/1D2G9ti1t7/" class="social-link" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook"></i> Facebook</a>
+            <a href="https://www.tiktok.com/@ai.odyssey.labs" class="social-link" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-tiktok"></i> TikTok</a>
+            <a href="https://paypal.me/HoshiAmano" class="social-link" target="_blank" rel="noopener noreferrer" style="color: #0070ba;"><i class="fa-brands fa-paypal"></i> Inan</a>
+            <a href="https://www.paypal.me/florian_lien_ici" class="social-link" target="_blank" rel="noopener noreferrer" style="color: #00457c;"><i class="fa-brands fa-paypal"></i> Florian</a>
+        </div>
+
+
+        <p>&copy; 2026 AI ODYSSEY LABS - Tous droits réservés.</p>
+        <p style="margin-top: 10px; font-size: 0.8rem; letter-spacing: 1px; color: var(--accent-primary);">L'art de demain, encodé aujourd'hui.</p>
+        <p style="margin-top: 5px;"><a href="mentions.html" style="color: var(--text-dim); text-decoration: none; font-size: 0.8rem;">Mentions Légales & CGV</a></p>
+    </footer>
+
+
+    <script src="main.js"></script>
+    
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // INITIALISATION EMAILJS
+            emailjs.init("JZkxFtImIFGGfhBQq");
+        })();
+    </script>
+
+    <script>
+        // Logique pour sélectionner un seul destinataire à la fois
+        function selectRecipient(clickedBtn) {
+            const buttons = document.querySelectorAll('.recipient-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            clickedBtn.classList.add('active');
+
+            // Mise à jour dynamique du bouton PayPal
+            const name = clickedBtn.textContent.includes('Inan') ? 'Inan' : 'Florian';
+            document.getElementById('selected-name').textContent = name;
+            
+            if (name === 'Inan') {
+                document.getElementById('paypal-inan').style.display = 'inline-flex';
+                document.getElementById('paypal-florian').style.display = 'none';
+            } else {
+                document.getElementById('paypal-inan').style.display = 'none';
+                document.getElementById('paypal-florian').style.display = 'inline-flex';
+            }
+        }
+
+
+        // Gestion de l'envoi du formulaire avec EmailJS
+        document.getElementById('request-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Empêche la page de se recharger
+            
+            const submitBtn = document.getElementById('submit-btn');
+            const statusMsg = document.getElementById('status-message');
+            const message = document.getElementById('message').value;
+            const isPublic = document.getElementById('btn-poster').classList.contains('active') ? 'Oui' : 'Non';
+            
+            // Trouver quel bouton est actif pour savoir à qui envoyer
+            const activeRecipientBtn = document.querySelector('.recipient-btn.active');
+            const toEmail = activeRecipientBtn.getAttribute('data-email');
+            
+            // Changer le texte du bouton pendant l'envoi
+            submitBtn.textContent = 'Envoi en cours...';
+            submitBtn.disabled = true;
+
+            // Paramètres envoyés au Template EmailJS
+            const templateParams = {
+                to_email: toEmail,
+                message: message,
+                publish_permission: isPublic
+            };
+
+            // ENVOI
+            emailjs.send('service_kssjb7p', 'template_6lx9gwf', templateParams)
+                .then(function(response) {
+                    submitBtn.textContent = 'Envoyer la demande';
+                    submitBtn.disabled = false;
+                    statusMsg.style.display = 'block';
+                    statusMsg.style.color = '#2ecc71';
+                    statusMsg.textContent = 'Demande envoyée avec succès !';
+                    document.getElementById('request-form').reset();
+                    document.getElementById('btn-poster').classList.remove('active');
+                }, function(error) {
+                    submitBtn.textContent = 'Envoyer la demande';
+                    submitBtn.disabled = false;
+                    statusMsg.style.display = 'block';
+                    statusMsg.style.color = '#e74c3c';
+                    statusMsg.textContent = "Erreur lors de l'envoi. Veuillez réessayer.";
+                    console.log('FAILED...', error);
+                });
+        });
+    </script>
+</body>
+</html>

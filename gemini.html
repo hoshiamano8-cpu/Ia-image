@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galerie Gemini | AI Odyssey Labs</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="bg-mesh"></div>
+
+    <header>
+        <div class="logo" data-text="AI ODYSSEY LABS">AI ODYSSEY LABS</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="infos.html">Infos</a></li>
+                <li><a href="commentaires.html">Commentaires</a></li>
+                <li><a href="galleries.html">Galeries</a></li>
+                <li><a href="#" id="contact-trigger">Contacts</a></li>
+                <li><a href="connexion.html" style="color: var(--accent-primary); font-weight: bold;">Connexion</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="gallery-page">
+        <section class="hero-small">
+            <h1 class="reveal active">Galerie <span>Gemini</span></h1>
+            <p class="reveal active">Une exploration visuelle des capacités génératives de Gemini.</p>
+            <div class="reveal active" style="margin-top: 20px;">
+                <a href="index.html" class="cta-button" style="padding: 10px 20px; font-size: 0.9rem; text-decoration: none;">&larr; Retour à l'accueil</a>
+            </div>
+        </section>
+
+        <section id="gallery-content">
+            <div class="grid-container" style="grid-template-columns: repeat(3, 1fr);">
+                
+                <!-- ============================================================== -->
+                <!-- 👨‍💻 ESPACE DÉVELOPPEUR : COMMENT POSTER UNE NOUVELLE IMAGE ? 👨‍💻 -->
+                <!-- 
+                1. Mettez votre fichier image (ex: 'mon-image.jpg') dans le dossier du site.
+                2. Copiez le bloc de code ci-dessous et collez-le en dessous de ce message.
+                3. Remplacez "NOM_DE_VOTRE_IMAGE.jpg" et le "Titre de l'image".
+                
+                <a href="image-details.html" class="card reveal active" style="padding: 15px; text-align: center; text-decoration: none; display: block;">
+                    <div class="comment-icon-badge"><i class="far fa-comment"></i></div>
+                    <img src="NOM_DE_VOTRE_IMAGE.jpg" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px; margin-bottom: 10px;" alt="Image">
+                    <h3 style="font-size: 1rem;">Titre de l'image</h3>
+                </a>
+                -->
+                <!-- ============================================================== -->
+
+                <!-- Small placeholders linking to details page -->
+                <a href="image-details.html" class="card reveal active" style="padding: 15px; text-align: center; text-decoration: none; display: block;">
+                    <div class="comment-icon-badge"><i class="far fa-comment"></i></div>
+                    <div class="abstract-visual v3" style="height: 150px; margin-bottom: 10px;"></div>
+                    <h3 style="font-size: 1rem;">Prochainement</h3>
+                </a>
+                <a href="image-details.html" class="card reveal active" style="padding: 15px; text-align: center; text-decoration: none; display: block;">
+                    <div class="comment-icon-badge"><i class="far fa-comment"></i></div>
+                    <div class="abstract-visual v1" style="height: 150px; margin-bottom: 10px;"></div>
+                    <h3 style="font-size: 1rem;">Prochainement</h3>
+                </a>
+                <a href="image-details.html" class="card reveal active" style="padding: 15px; text-align: center; text-decoration: none; display: block;">
+                    <div class="comment-icon-badge"><i class="far fa-comment"></i></div>
+                    <div class="abstract-visual v2" style="height: 150px; margin-bottom: 10px;"></div>
+                    <h3 style="font-size: 1rem;">Prochainement</h3>
+                </a>
+                <a href="image-details.html" class="card reveal active" style="padding: 15px; text-align: center; text-decoration: none; display: block;">
+                    <div class="comment-icon-badge"><i class="far fa-comment"></i></div>
+                    <div class="abstract-visual v3" style="height: 150px; margin-bottom: 10px;"></div>
+                    <h3 style="font-size: 1rem;">Prochainement</h3>
+                </a>
+                <a href="image-details.html" class="card reveal active" style="padding: 15px; text-align: center; text-decoration: none; display: block;">
+                    <div class="comment-icon-badge"><i class="far fa-comment"></i></div>
+                    <div class="abstract-visual v1" style="height: 150px; margin-bottom: 10px;"></div>
+                    <h3 style="font-size: 1rem;">Prochainement</h3>
+                </a>
+                <a href="image-details.html" class="card reveal active" style="padding: 15px; text-align: center; text-decoration: none; display: block;">
+                    <div class="comment-icon-badge"><i class="far fa-comment"></i></div>
+                    <div class="abstract-visual v2" style="height: 150px; margin-bottom: 10px;"></div>
+                    <h3 style="font-size: 1rem;">Prochainement</h3>
+                </a>
+            </div>
+
+            <div style="text-align: center; margin-top: 60px;">
+                <a href="galleries.html" class="cta-button" style="text-decoration: none;">Retour aux Galeries</a>
+            </div>
+        </section>
+    </main>
+    
+    <a href="chatgpt.html" class="side-nav-arrow left" title="Galerie Chat GPT">&larr;</a>
+
+    <div id="contact-overlay" class="overlay">
+        <div class="overlay-content">
+            <button id="close-overlay" class="close-btn">&times;</button>
+            <h2 class="section-title">Contacts</h2>
+            <div class="contact-grid">
+                <div class="contact-card" id="inan-card">
+                    <h3 class="contact-name gold-neon">Inan <span>(Designer)</span></h3>
+                    <div class="contact-item">
+                        <span class="label">Numéro</span>
+                        <a href="tel:+33769296128" class="value">07 69 29 61 28</a>
+                    </div>
+                    <div class="contact-item">
+                        <span class="label">Email</span>
+                        <a href="mailto:gab26gamer@outlook.fr?subject=Contact%20AI%20Odyssey%20Labs" class="value">gab26gamer@outlook.fr</a>
+                    </div>
+                </div>
+                <div class="contact-card" id="florian-card">
+                    <h3 class="contact-name">Florian <span>(Co-Designer)</span></h3>
+                    <div class="contact-item">
+                        <span class="label">Numéro</span>
+                        <a href="tel:+33686157741" class="value">06 86 15 77 41</a>
+                    </div>
+                    <div class="contact-item">
+                        <span class="label">Email</span>
+                        <a href="mailto:Florian.tissot@outlook.fr?subject=Contact%20AI%20Odyssey%20Labs" class="value">Florian.tissot@outlook.fr</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://www.instagram.com/ai.odyssey.labs?igsh=dTY3anluMWUxZHJj" class="social-link" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i> Instagram</a>
+            <a href="https://www.facebook.com/share/1D2G9ti1t7/" class="social-link" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook"></i> Facebook</a>
+            <a href="https://www.tiktok.com/@ai.odyssey.labs" class="social-link" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-tiktok"></i> TikTok</a>
+            <a href="https://paypal.me/HoshiAmano" class="social-link" target="_blank" rel="noopener noreferrer" style="color: #0070ba;"><i class="fa-brands fa-paypal"></i> Inan</a>
+            <a href="https://www.paypal.me/florian_lien_ici" class="social-link" target="_blank" rel="noopener noreferrer" style="color: #00457c;"><i class="fa-brands fa-paypal"></i> Florian</a>
+        </div>
+
+        <p>&copy; 2026 AI ODYSSEY LABS - Tous droits réservés.</p>
+        <p style="margin-top: 10px; font-size: 0.8rem; letter-spacing: 1px; color: var(--accent-primary);">L'art de demain, encodé aujourd'hui.</p>
+        <p style="margin-top: 5px;"><a href="mentions.html" style="color: var(--text-dim); text-decoration: none; font-size: 0.8rem;">Mentions Légales & CGV</a></p>
+    </footer>
+
+
+    <script src="main.js"></script>
+
+    <!-- Water Distortion Filter -->
+    <svg style="display: none;">
+        <filter id="water-filter" color-interpolation-filters="sRGB">
+            <feTurbulence type="fractalNoise" baseFrequency="0.02 0.05" numOctaves="2" stitchTiles="stitch" result="noise" />
+            <feOffset dx="0" dy="0" result="offsetNoise">
+                <animate attributeName="dx" dur="2s" values="0; 500" repeatCount="indefinite" />
+            </feOffset>
+            <feDisplacementMap in="SourceGraphic" in2="offsetNoise" scale="10" />
+        </filter>
+    </svg>
+</body>
+</html>

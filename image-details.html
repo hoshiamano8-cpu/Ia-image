@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détails de l'image | AI Odyssey Labs</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="bg-mesh"></div>
+
+    <header>
+        <div class="logo" data-text="AI ODYSSEY LABS">AI ODYSSEY LABS</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="infos.html">Infos</a></li>
+                <li><a href="commentaires.html">Commentaires</a></li>
+                <li><a href="galleries.html">Galeries</a></li>
+                <li><a href="#" id="contact-trigger">Contacts</a></li>
+                <li><a href="connexion.html" style="color: var(--accent-primary); font-weight: bold;">Connexion</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="image-details-page" style="padding-top: 150px; padding-bottom: 100px; display: flex; flex-direction: column; align-items: center; max-width: 800px; margin: 0 auto; width: 90%;">
+        
+        <div style="width: 100%; margin-bottom: 20px;">
+            <a href="galleries.html" class="cta-button" style="padding: 10px 20px; font-size: 0.9rem; text-decoration: none;">&larr; Retour aux Galeries</a>
+        </div>
+
+        <!-- Large Centered Image -->
+        <div class="modal-image-container" style="margin-bottom: 40px; box-shadow: 0 0 30px rgba(0, 242, 255, 0.2);">
+            <div class="abstract-visual v1" style="height: 400px; width: 100%;"></div>
+            <!-- When real images are added, they will replace the div above -->
+            <!-- <img src="image.jpg" alt="Art AI" style="width: 100%; display: block;"> -->
+        </div>
+
+        <!-- Comment Form -->
+        <div class="image-comment-section" style="width: 100%; margin-bottom: 40px; border-top: none; padding-top: 0;">
+            <h3 style="font-family: var(--font-heading); color: var(--accent-primary); margin-bottom: 20px; font-size: 1.5rem;">Donne ton avis ici</h3>
+            <div class="mini-comment-form" style="background: rgba(255, 255, 255, 0.03); padding: 25px; border-radius: 16px; border: 1px solid var(--glass-border);">
+                <input type="text" placeholder="Votre nom ou pseudo (Facultatif)" style="margin-bottom: 15px;">
+                <textarea placeholder="Partagez vos impressions sur cette œuvre..." rows="4" style="margin-bottom: 15px;"></textarea>
+                <button type="button" class="cta-button" style="padding: 12px 30px; font-size: 1rem;">Publier</button>
+            </div>
+        </div>
+
+        <!-- Comments List -->
+        <div class="comments-list" style="width: 100%;">
+            <h3 style="font-family: var(--font-heading); color: #fff; margin-bottom: 20px; font-size: 1.5rem;">Commentaires (0)</h3>
+            <p style="color: var(--text-dim); font-style: italic; text-align: center; padding: 20px;">Donne ton avis !</p>
+        </div>
+
+    </main>
+
+    <!-- Overlay Contact (reused from other pages) -->
+    <div id="contact-overlay" class="overlay">
+        <div class="overlay-content">
+            <button id="close-overlay" class="close-btn">&times;</button>
+            <h2 class="section-title">Contacts</h2>
+            <div class="contact-grid">
+                <div class="contact-card" id="inan-card">
+                    <h3 class="contact-name gold-neon">Inan <span>(Designer)</span></h3>
+                    <div class="contact-item">
+                        <span class="label">Numéro</span>
+                        <a href="tel:+33769296128" class="value">07 69 29 61 28</a>
+                    </div>
+                </div>
+                <div class="contact-card" id="florian-card">
+                    <h3 class="contact-name">Florian <span>(Développeur)</span></h3>
+                    <div class="contact-item">
+                        <span class="label">Numéro</span>
+                        <a href="tel:+33664795325" class="value">06 64 79 53 25</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
